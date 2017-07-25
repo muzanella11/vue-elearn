@@ -25,7 +25,6 @@ export default {
   },
   mounted () {
     //
-    console.info('layout : ', this.haveLayout)
   },
   components: {
     LayoutPresistent

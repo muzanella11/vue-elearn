@@ -9,10 +9,12 @@ export default [
     component: Dashboard,
     meta: {
       layout: true,
-      breadcrumb: [{
-        to: {name: 'dashboard'},
-        label: 'Dashboard'
-      }]
+      breadcrumb () {
+        return [{
+          to: {name: 'dashboard'},
+          label: 'Dashboard'
+        }]
+      }
     }
   }
 ]

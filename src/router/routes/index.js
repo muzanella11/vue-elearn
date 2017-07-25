@@ -1,4 +1,6 @@
 import dashboard from './dashboard'
+import list from './list'
+import input from './input'
 import vuetifyex from './vuetifyex'
 
 const Hello = (resolve) => {
@@ -27,6 +29,8 @@ const hello = {
 
 export default [
   ...dashboard,
+  ...list,
+  ...input,
   hello,
   ...vuetifyex,
   {

@@ -21,14 +21,14 @@
       <v-list class="pt-0" dense>
         <v-divider></v-divider>
         <v-list-item v-for="item in items" :key="item.title">
-          <v-list-tile>
+          <router-link exact :to="item.to" class="list__tile">
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile-content>
-          </v-list-tile>
+          </router-link>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -57,7 +57,16 @@ export default {
       mini: false,
       items: [{
         icon: 'home',
-        title: 'Home'
+        title: 'Home',
+        to: {path: '/', name: 'dashboard'}
+      }, {
+        icon: 'list',
+        title: 'List',
+        to: {path: '/list', name: 'list'}
+      }, {
+        icon: 'input',
+        title: 'Input',
+        to: {path: '/input', name: 'input'}
       }]
     }
   }
