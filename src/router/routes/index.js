@@ -1,3 +1,4 @@
+import auth from './auth'
 import dashboard from './dashboard'
 import list from './list'
 import input from './input'
@@ -28,6 +29,7 @@ const hello = {
 }
 
 export default [
+  ...auth,
   ...dashboard,
   ...list,
   ...input,
