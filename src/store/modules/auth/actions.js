@@ -1,8 +1,22 @@
 import auth from '@/api/modules/auth'
 import promise from '@/utils/promise-utils'
-import { AUTH_AUTHENTICATE, AUTH_DEAUTHENTICATE, AUTH_LOGIN, AUTH_LOGOUT, AUTH_FORGOT_PASSWORD } from './types'
+import { AUTH_AUTHENTICATE, AUTH_DEAUTHENTICATE, AUTH_LOGIN, AUTH_LOGOUT, AUTH_FORGOT_PASSWORD, AUTH_CONNECTION } from './types'
 
 export default {
+  [AUTH_CONNECTION] (context, payload) {
+    console.info('connection : ', context)
+    console.info('connection : ', payload)
+    return new Promise((resolve, reject) => {
+      auth.testConnection(payload).then((response) => {
+        console.info('response : ', response.body.data)
+        resolve(response)
+      }, (error) => {
+        console.info('error : ', error)
+        reject(error)
+      })
+    })
+  },
+
   [AUTH_AUTHENTICATE] ({ commit }, data) {
     // console.info(context)
     return new Promise((resolve, reject) => {

@@ -1,4 +1,4 @@
-import { Login, Logout, ForgotPassword } from '@/pages/auth'
+import { Login, Logout } from '@/pages/auth'
 
 export default [
   {
@@ -6,7 +6,6 @@ export default [
     name: 'login',
     component: Login,
     meta: {
-      noLayout: true,
       allowAnonymous: true
     }
   },
@@ -14,14 +13,5 @@ export default [
     path: '/logout',
     name: 'logout',
     component: Logout
-  },
-  {
-    path: '/forgot-password',
-    name: 'forgot.password',
-    component: ForgotPassword,
-    meta: {
-      noLayout: true,
-      allowAnonymous: true
-    }
   }
 ]

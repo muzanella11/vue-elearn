@@ -2,6 +2,10 @@ import client from '@/resource'
 import request from '@/api/request'
 
 export default {
+  testConnection (data) {
+    return client.post('auth/login', data)
+  },
+
   signin (config) {
     return request.api(config)
   },

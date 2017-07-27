@@ -1,5 +1,5 @@
 import store from '@/store'
-import * as GLOBAL from '@/store/global/types'
+import * as GLOBAL from '@/store/modules/general/types'
 import route from '@/router'
 
 export default function (request, next) {
@@ -11,6 +11,7 @@ export default function (request, next) {
         type: 'error'
       })
     }
+
     store.commit(GLOBAL.SET_LAST_REQUEST, Date.now())
 
     if (response.status === 401 && response.data.code !== 4) {

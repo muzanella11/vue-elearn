@@ -3,7 +3,7 @@ import store from '@/store'
 import handler from './handler'
 
 Vue.http.options.emulateJSON = true
-Vue.http.options.root = process.env.BASE_URL
+Vue.http.options.root = process.env.BASE_URL + '/' + process.env.VERSION + '/'
 Vue.http.headers.common['Accept'] = 'application/json'
 
 Vue.http.interceptors.push((request, next) => {
@@ -13,7 +13,7 @@ Vue.http.interceptors.push((request, next) => {
 
   // modify headers
   request.headers.set('App-Key', process.env.APP_KEY)
-  request.headers.set('Accept', 'application/x.ANTARAN.' + process.env.VERSION + '.json')
+  request.headers.set('Accept', 'application/N.enem.' + process.env.VERSION + '.json')
 
   handler(request, next)
 })
